@@ -17,5 +17,12 @@ WHERE name NOT LIKE '% %';
 
 SELECT title
 FROM track
-WHERE title ILIKE '%my%'
-   OR title ILIKE '%мой%';
+WHERE
+      title ILIKE 'my'      
+   OR title ILIKE 'my %'    
+   OR title ILIKE '% my'    
+   OR title ILIKE '% my %'  
+   OR title ILIKE 'мой'
+   OR title ILIKE 'мой %'
+   OR title ILIKE '% мой'
+   OR title ILIKE '% мой %';

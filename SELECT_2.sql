@@ -33,11 +33,12 @@ JOIN artist_album aa ON a.id = aa.album_id
 JOIN artist ar ON aa.artist_id = ar.id
 WHERE ar.name = 'Queen';
 
-SELECT a.title
+SELECT a.title,
+       aa.artist_id
 FROM album a
 JOIN artist_album aa ON a.id = aa.album_id
 JOIN artist_genre ag ON aa.artist_id = ag.artist_id
-GROUP BY a.title
+GROUP BY a.id, a.title, aa.artist_id
 HAVING COUNT(DISTINCT ag.genre_id) > 1;
 
 SELECT t.title
